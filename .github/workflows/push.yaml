@@ -1,0 +1,18 @@
+on: [push]
+name: push
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v1.2.0
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      - name: Install Requirements
+        run: |
+          pip install -r requirements.txt
+      - name: Run Tests
+        run: |
+          pytest

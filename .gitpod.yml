@@ -1,0 +1,8 @@
+image: python:3.9
+tasks:
+  - init: |
+      git config user.email 1478183+stefanhoelzl@users.noreply.github.com
+      pip install -r requirements.txt
+vscode:
+  extensions:
+    - ms-python.python
